@@ -62,8 +62,9 @@ public class SearchServlet extends HttpServlet {
                         jsonArray.put(obj);
                     }
                     FileWriter file = new FileWriter("/home/hsenid/Documents/PermissionAppGit/src/main/webapp/js/searchdata.json");
-                    file.write(obj.toString());
-                   // file.flush();
+                    file.write("{\"total\": 20,\"rows\":\n" +
+                            "[" + obj.toString() + "]}");
+                    file.flush();
                     file.close();
                     logger.info(total_rows);
                 }
@@ -71,7 +72,7 @@ public class SearchServlet extends HttpServlet {
 
                 request.setAttribute("errorMessage", "User already exists !");
                 RequestDispatcher rd = request.getRequestDispatcher("/searchuser.jsp");
-                rd.include(request, response);
+                rd.forward(request, response);
                 //out.println(""+username+" is already in use");
 
             out.println();
