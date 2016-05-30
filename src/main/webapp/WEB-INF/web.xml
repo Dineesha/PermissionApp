@@ -21,11 +21,11 @@
     <param-value>user_details</param-value>
   </context-param>-->
   <listener>
-    <listener-class>yandextranslator.DBConListener</listener-class>
+    <listener-class>database.DBConListener</listener-class>
   </listener>
   <servlet>
     <servlet-name>login</servlet-name>
-    <servlet-class>yandextranslator.Login</servlet-class>
+    <servlet-class>usermanager.Login</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>translate</servlet-name>
@@ -33,19 +33,19 @@
   </servlet>
   <servlet>
     <servlet-name>searchServlet</servlet-name>
-    <servlet-class>yandextranslator.SearchServlet</servlet-class>
+    <servlet-class>usermanager.SearchServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>registration</servlet-name>
-    <servlet-class>yandextranslator.Registration</servlet-class>
+    <servlet-class>usermanager.Registration</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>deleteServlet</servlet-name>
-    <servlet-class>yandextranslator.DeleteServlet</servlet-class>
+    <servlet-class>usermanager.DeleteServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>userEditServlet</servlet-name>
-    <servlet-class>yandextranslator.UserEditServlet</servlet-class>
+    <servlet-class>usermanager.UserEditServlet</servlet-class>
   </servlet>
     <servlet>
         <servlet-name>citycaller</servlet-name>

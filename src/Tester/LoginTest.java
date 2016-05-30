@@ -1,7 +1,7 @@
 package Tester;
 
 import yandextranslator.UserConfigWriter;
-import yandextranslator.Login;
+import usermanager.Login;
 
 import static org.testng.Assert.fail;
 

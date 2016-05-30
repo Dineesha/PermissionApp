@@ -4,7 +4,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 import yandextranslator.CreateUser;
 import yandextranslator.UserConfigWriter;
-import yandextranslator.Login;
+import usermanager.Login;
 
 import static org.testng.Assert.fail;
 

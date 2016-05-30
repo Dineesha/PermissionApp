@@ -4,6 +4,8 @@ package yandextranslator;
  * Created by hsenid on 3/21/16.
  */
 
+import database.PooledDataSource;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

@@ -26,7 +26,9 @@
     <!-- <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">-->
     <link rel="stylesheet" href="assets/css/form-elements.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="successDesign.css">
+<%--
+    <link rel="stylesheet" type="text/css" href="assets/css/successDesign.css">
+--%>
 
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -82,6 +84,7 @@
 
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 form-box">
                     <div class="form-top">
@@ -110,17 +113,20 @@
 
                         </div>
                     </div>
+
                     <div class="form-bottom" id="modalform">
-                        <form role="form" action="SearchServlet" method="post" class="search-form" >
-                            <div class="form-group">
+                        <form role="form" action="SearchServlet" method="post" class="search-form" onload="location.reload(true);">
+
+                        <div class="form-group">
+
                                 <label class="sr-only">searchname</label>
                                 <input type="text" name="username"  placeholder="Search name here ..."
                                        class="form-firstname form-control" id="username">
 
                             </div>
-                            <button type="submit" class="btn" id="btn search">search</button>
+                            <button type="submit" class="btn" id="btn search" onClick="document.location.reload(true)">search</button>
 
-</form>
+<%--</form>--%>
                     </div>
                 </div>
             </div>
@@ -132,7 +138,9 @@
 
 </div>
 
-<form role="form" action="DeleteServlet" method="post">
+<%--
+<form role="form" action="SearchServlet" method="post">
+--%>
 
     <p>
         <%
@@ -327,6 +335,13 @@
                   data-url="http://mikepenz.com/jsfiddle"
 --%>
                   data-url="js/searchdata.json"
+
+
+
+<%--
+                  data-url=" <c:set var="data-url" scope="session" value="request.getAttribute(file)"/>"
+--%>
+
                   data-pagination="true"
                   data-side-pagination="server"
                   data-page-list="[5, 10, 20,25, 50, 100, 200]"
@@ -339,7 +354,7 @@
                   data-show-refresh="true"
                   data-show-toggle="true"
                   data-show-columns="true"
-                  data-toolbar="#toolbar">
+                  data-toolbar="#toolbar" onload="location.reload(true)">
                <thead>
                <tr style="color: Highlight">
                    <%--<th data-field="fn" data-sortable="true" >Firstname</th>
@@ -367,14 +382,7 @@
 
                    <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents">Action</th>
 <tr>               </tr>
-               <%--<td>dineesha</td>
-               <td>dev</td>
-               <td>23/06/1992</td>
-               <td>Sri Lanka</td>
-               <td>1</td>
-               <td>din@mail.com</td>
-               <td>1</td>
-               <td>dineesha</td>--%>
+
 
 
                </tr>
@@ -443,8 +451,14 @@
     } );
 </script>--%>
 
+
+
 </div>
+
+<%--
 </form>
+--%>
+<div id="pagination1"> </div>
         <%--<div class="col-md-6">
             <ul class="pagination">
                 <li class="active"><a href="#">1</a></li>
@@ -455,13 +469,24 @@
             </ul>
         </div>--%>
 
-
+<script> $(function() {
+    $('#pagination1').pagination({
+        items: 100,
+        itemsOnPage: 10,
+        cssStyle: 'light-theme'
+    });
+});</script>
 
 <!-- Javascript -->
 <script src="assets/js/jquery-1.11.1.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery.backstretch.min.js"></script>
 <script src="bootstrap_table.js"></script>
+
+
+<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
+<script type="text/javascript" src="assets/js/jquery-1.11.1.js"></script>
+
 
 
 

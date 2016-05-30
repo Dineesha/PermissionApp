@@ -1,7 +1,8 @@
-package yandextranslator;
+package database;
 
 import com.mchange.v2.c3p0.*;
 import org.apache.log4j.Logger;
+import yandextranslator.HttpClientCall;
 
 
 import javax.sql.DataSource;

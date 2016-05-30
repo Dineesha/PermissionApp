@@ -3,6 +3,7 @@ package yandextranslator;
 import javax.servlet.http.HttpServlet;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import database.Database;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

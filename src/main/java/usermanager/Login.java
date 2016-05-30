@@ -1,4 +1,4 @@
-package yandextranslator;
+package usermanager;
 
 /**
  * Created by hsenid on 3/14/16.
@@ -6,6 +6,7 @@ package yandextranslator;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
+import database.DBConListener;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

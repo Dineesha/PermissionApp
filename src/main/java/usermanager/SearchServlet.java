@@ -1,4 +1,4 @@
-package yandextranslator;
+package usermanager;
 
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
@@ -60,19 +60,23 @@ public class SearchServlet extends HttpServlet {
                         obj.put(rs.getMetaData().getColumnLabel(i + 1)
                                 .toLowerCase(), rs.getObject(i + 1));
                         jsonArray.put(obj);
+
+                        FileWriter file = new FileWriter("/home/hsenid/Documents/PermissionAppGit/src/main/webapp/js/searchdata.json");
+                        file.write("{\"total\": 20,\"rows\":\n" +
+                                "[" + obj.toString() + "]}");
+
+                        file.flush();
+                        file.close();
+                        String fl=file.toString();
+                        request.setAttribute("data-url",fl);
+
                     }
-                    FileWriter file = new FileWriter("/home/hsenid/Documents/PermissionAppGit/src/main/webapp/js/searchdata.json");
-                    file.write("{\"total\": 20,\"rows\":\n" +
-                            "[" + obj.toString() + "]}");
-                    file.flush();
-                    file.close();
                     logger.info(total_rows);
                 }
                 logger.info(jsonArray);
-
                 request.setAttribute("errorMessage", "User already exists !");
-                RequestDispatcher rd = request.getRequestDispatcher("/searchuser.jsp");
-                rd.forward(request, response);
+            RequestDispatcher rd = request.getRequestDispatcher("/searchuser.jsp");
+                rd.include(request, response);
                 //out.println(""+username+" is already in use");
 
             out.println();

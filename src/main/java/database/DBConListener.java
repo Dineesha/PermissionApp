@@ -1,4 +1,4 @@
-package yandextranslator;
+package database;
 
 /**
  * Created by hsenid on 3/14/16.
