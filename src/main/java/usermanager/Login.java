@@ -70,7 +70,7 @@ public class Login extends HttpServlet {
                         String userGroup = rs.getString(1);
 
                         request.setAttribute("Role", userGroup);
-                        RequestDispatcher rd = request.getRequestDispatcher("success.jsp");
+                        RequestDispatcher rd = request.getRequestDispatcher("success.jsp?name=" + username);
                         rd.forward(request, response);
                     }
 

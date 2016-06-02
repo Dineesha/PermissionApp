@@ -1,18 +1,14 @@
 package Tester;
 
 import com.mongodb.BasicDBObject;
-import com.mongodb.MongoClient;
-import yandextranslator.CreateUser;
-import yandextranslator.UserConfigWriter;
-import usermanager.Login;
-
-import static org.testng.Assert.fail;
-
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import usermanager.Login;
+import yandextranslator.CreateUser;
+import yandextranslator.UserConfigWriter;
 
 import java.net.UnknownHostException;
 
@@ -92,7 +88,6 @@ public class LoginTest {
         String database = prop2.getproperty("db.database");
         String dbUname = prop2.getproperty("db.username");
         String dbPasswd = prop2.getproperty("db.password");*/
-        MongoClient mongo = new MongoClient("localhost", 27017);
 
         /**** Get database ****/
 

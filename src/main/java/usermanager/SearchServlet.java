@@ -40,8 +40,8 @@ public class SearchServlet extends HttpServlet {
             /*PreparedStatement ps = con.prepareStatement
                     ("SELECT * FROM user WHERE fname=username");*/
             //ps.execute();
-            PreparedStatement ps = con.prepareStatement("select * from user where username=?");
-            ps.setString(1,username);
+            PreparedStatement ps = con.prepareStatement("select * from user where username LIKE ?");
+            ps.setString(1,"%" +username+ "%");
             ResultSet rs = ps.executeQuery();
 
            /* if (!rs.next()) {
@@ -60,23 +60,23 @@ public class SearchServlet extends HttpServlet {
                         obj.put(rs.getMetaData().getColumnLabel(i + 1)
                                 .toLowerCase(), rs.getObject(i + 1));
                         jsonArray.put(obj);
+                        request.setAttribute("dataObj",obj);
 
                         FileWriter file = new FileWriter("/home/hsenid/Documents/PermissionAppGit/src/main/webapp/js/searchdata.json");
-                        file.write("{\"total\": 20,\"rows\":\n" +
+                        file.write("{\"total\":"+total_rows+",\"rows\":\n" +
                                 "[" + obj.toString() + "]}");
 
                         file.flush();
                         file.close();
-                        String fl=file.toString();
-                        request.setAttribute("data-url",fl);
 
                     }
-                    logger.info(total_rows);
+
                 }
-                logger.info(jsonArray);
-                request.setAttribute("errorMessage", "User already exists !");
+               // logger.info(jsonArray);
+
+            request.setAttribute("errorMessage", "User already exists !");
             RequestDispatcher rd = request.getRequestDispatcher("/searchuser.jsp");
-                rd.include(request, response);
+                rd.forward(request, response);
                 //out.println(""+username+" is already in use");
 
             out.println();

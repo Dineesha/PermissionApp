@@ -3,7 +3,7 @@ package yandextranslator;
 import database.Database;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import database.PooledDataSource;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -46,6 +46,7 @@ public class UserPermissions extends HttpServlet {
                 " (SELECT groupgroup_id FROM user_group\n" + "  WHERE username=\'" + userName + "\'))";
 
         try {
+
 
             con = Database.cpds.getConnection();
             st = con.prepareStatement(groupQuery);

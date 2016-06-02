@@ -5,7 +5,9 @@
         <classes>
             <class name="Tester.LanguageTranslationTest"/>
             <class name="Tester.LoginTest"/>
-
+            <class name="Tester.IndexTest"/>
+            <class name="Tester.SuccessTest"/>
+            <class name="Tester.AddUserTest"/>
 
         </classes>
     </test>

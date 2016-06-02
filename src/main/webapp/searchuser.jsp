@@ -5,6 +5,11 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
 <%@ page import="yandextranslator.UserUpdate" %>
+<%@ page import="org.json.JSONArray" %>
+<%@ page import="java.io.FileWriter" %>
+<%@ page import="org.json.JSONObject" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.SQLException" %>
 <%--
   Created by IntelliJ IDEA.
   User: hsenid
@@ -329,7 +334,9 @@
         </button>
     </div>
 
-           <table data-toggle="table" id="table"
+
+
+                    <table data-toggle="table" id="table"
 
 <%--
                   data-url="http://mikepenz.com/jsfiddle"
@@ -357,7 +364,7 @@
                   data-toolbar="#toolbar" onload="location.reload(true)">
                <thead>
                <tr style="color: Highlight">
-                   <%--<th data-field="fn" data-sortable="true" >Firstname</th>
+                  <%-- <th data-field="fn" data-sortable="true" >Firstname</th>
                    <th data-field="ln" data-sortable="true" >Lastname</th>
                    <th data-field="em">E-mail</th>
                    <th data-field="bd" data-sortable="true" >DOB</th>
@@ -381,7 +388,7 @@
                        <th data-field="country">Group</th>
 
                    <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents">Action</th>
-<tr>               </tr>
+
 
 
 
@@ -389,8 +396,10 @@
                </thead>
 
            </table>
+
+
             <script>
-                var $table = $('#table')
+                var $table = $('#table');
                 function actionFormatter(value, row, index) {
                     return [
                         '<a class="edit ml10" href="javascript:void(0)" title="Edit">',
@@ -441,6 +450,7 @@
 
 
             </script>
+
 
         <%--<script src="sample2.js"></script>--%>
 <%--<script>

@@ -18,7 +18,7 @@ public class Database {
      * Database connection class
      */
     private static Connection conn;
-    static ComboPooledDataSource cpds = new ComboPooledDataSource();
+    public static ComboPooledDataSource cpds = new ComboPooledDataSource();
     private static PropertyReader propObj = new PropertyReader();
 
 

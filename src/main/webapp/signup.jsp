@@ -9,47 +9,28 @@
            uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-
-
+<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css"
+      rel="stylesheet" type="text/css" />
+<link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
+      rel="stylesheet" type="text/css" />
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Register</title>
 
-    <!-- CSS -->
+
 
     <title>Sign Up</title>
-    <%--<script type="text/javascript">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css"
+      rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
+      rel="stylesheet" type="text/css" />
+<script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
+        type="text/javascript"></script>
 
-        /***********************************************
-         * Drop Down Date select script- by JavaScriptKit.com
-         * This notice MUST stay intact for use
-         * Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and more
-         ***********************************************/
-
-        var monthtext = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-
-        function populatedropdown(dayfield, monthfield, yearfield) {
-            var today = new Date()
-            var dayfield = document.getElementById(dayfield)
-            var monthfield = document.getElementById(monthfield)
-            var yearfield = document.getElementById(yearfield)
-            for (var i = 0; i < 31; i++)
-                dayfield.options[i] = new Option(i, i + 1)
-            dayfield.options[today.getDate()] = new Option(today.getDate(), today.getDate(), true, true) //select today's day
-            for (var m = 0; m < 12; m++)
-                monthfield.options[m] = new Option(monthtext[m], monthtext[m])
-            monthfield.options[today.getMonth()] = new Option(monthtext[today.getMonth()], monthtext[today.getMonth()], true, true) //select today's month
-            var thisyear = today.getFullYear()
-            for (var y = 0; y < 100; y++) {
-                yearfield.options[y] = new Option(thisyear, thisyear)
-                thisyear -= 1
-            }
-            yearfield.options[0] = new Option(today.getFullYear(), today.getFullYear(), true, true) //select today's year
-        }
-
-    </script>--%>
 <jsp:include page="header.jsp" />
 
 <fmt:bundle basename="jstl_fmt">
@@ -129,13 +110,7 @@
                                 </select>--%>
                             </form>
 
-                          <%--  <script type="text/javascript">
 
-                                //populatedropdown(id_of_day_select, id_of_month_select, id_of_year_select)
-                                window.onload = function () {
-                                    populatedropdown("daydropdown", "monthdropdown", "yeardropdown")
-                                }
-                            </script>--%>
 
                             <div class="form-group">
                                 <input type="text" name="phonenumber" class="form-control"
@@ -183,15 +158,56 @@
                                 <label id="city1" class="input-group-error form-error"></label>
 --%>
                             </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#group').multiselect({
+                includeSelectAllOption: true
+            });
+            $('#grpSelected').click(function () {
+                var selected = $("#group option:selected");
+                var message = "";
+                selected.each(function () {
+                    message += $(this).text() + " " + $(this).val() + "\n";
+                });
+                alert(message);
+            });
+        });
+    </script>
 
                             <div class="form-group">
 
-                                <select name="group">
+                                <select name="group" id="group" multiple="multiple" >
                                     <option>Administrator</option>
                                     <option>Customercare</option>
                                     <option>Translator</option>
                                     <option>Basic user</option>
                                 </select>
+                                <input type="button" id="grpSelected" value="Get Selected" />
+                           <%-- <script type="text/javascript">
+                                $(function () {
+                                    $('#lstFruits').multiselect({
+                                        includeSelectAllOption: true
+                                    });
+                                    $('#btnSelected').click(function () {
+                                        var selected = $("#lstFruits option:selected");
+                                        var message = "";
+                                        selected.each(function () {
+                                            message += $(this).text() + " " + $(this).val() + "\n";
+                                        });
+                                        alert(message);
+                                    });
+                                });
+                            </script>
+                            <select id="lstFruits" multiple="multiple">
+                                <option value="1">Mango</option>
+                                <option value="2">Apple</option>
+                                <option value="3">Banana</option>
+                                <option value="4">Guava</option>
+                                <option value="5">Orange</option>
+                            </select>
+                            <input type="button" id="btnSelected" value="Get Selected" />--%>
+                                <!-- CSS -->
+
                                <%-- <input name="group" placeholder="Select Your group" id="group"
                                        style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:23px; height:21px\9;#height:18px;border:1px solid #556;">
 
@@ -289,6 +305,12 @@
 <script src="assets/js/jquery.backstretch.min.js"></script>
 <script src="assets/js/scripts.js"></script>
 <script src="bootbox.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+<script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
+        type="text/javascript"></script>
 
 
 <a href=" http://translate.yandex.com/">Powered by Yandex.Translate</a>

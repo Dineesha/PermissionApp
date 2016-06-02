@@ -69,9 +69,9 @@ public class Registration extends HttpServlet {
           //  response.sendRedirect("signup.jsp");
             //RequestDispatcher rd = getServletContext().getRequestDispatcher("/signup.jsp");
 
-            RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/signup.jsp");
 
-            rd.include(request, response);
+            rd.forward(request, response);
 
 
 
