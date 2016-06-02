@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="Frisby Test: Verify working language list" errors="0" tests="1" failures="0" time="0.862" timestamp="2016-06-02T17:24:16">
+  <testcase classname="Frisby Test: Verify working language list" name="
+	[ GET https://translate.yandex.net/api/v1.5/tr.json/getLangs?key=trnsl.1.1.20160311T110648Z.2843309257351b77.503eb0ab4fee6d8e09936972b4bc73810e4b12b4&amp;ui=en ]" time="0.862"></testcase>
+</testsuite>
+</testsuites>

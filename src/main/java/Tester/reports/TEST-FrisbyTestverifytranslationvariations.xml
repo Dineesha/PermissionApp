@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="Frisby Test: verify translation variations" errors="0" tests="1" failures="0" time="0.625" timestamp="2016-06-02T17:24:20">
+  <testcase classname="Frisby Test: verify translation variations" name="
+	[ GET https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160314T055210Z.609ee89149686a99.22e2a4c8f48279cba64fe814237ef790791fd2c5&amp;text=විශාල ගස&amp;lang=si-en ]" time="0.625"></testcase>
+</testsuite>
+</testsuites>

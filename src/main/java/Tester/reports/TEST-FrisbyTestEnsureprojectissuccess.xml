@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="Frisby Test: Ensure project is success" errors="0" tests="1" failures="0" time="0.029" timestamp="2016-06-02T17:24:16">
+  <testcase classname="Frisby Test: Ensure project is success" name="
+	[ POST http://localhost:8080/CompleteYandexApp/ ]" time="0.028"></testcase>
+</testsuite>
+</testsuites>
