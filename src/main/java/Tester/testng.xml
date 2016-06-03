@@ -3,11 +3,13 @@
 <suite name="Suite1">
     <test name="test1">
         <classes>
-            <class name="Tester.LanguageTranslationTest"/>
-            <class name="Tester.LoginTest"/>
+            <!--<class name="Tester.LanguageTranslationTest"/>
+            <class name="Tester.LoginTest"/>-->
             <class name="Tester.IndexTest"/>
             <class name="Tester.SuccessTest"/>
             <class name="Tester.AddUserTest"/>
+            <class name="Tester.Wikipedia"/>
+            <class name="Tester.MailTest"/>
 
         </classes>
     </test>
